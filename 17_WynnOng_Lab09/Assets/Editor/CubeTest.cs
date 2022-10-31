@@ -21,5 +21,18 @@ namespace Tests
 
             Assert.IsFalse(testObject.activeSelf);
         }
+
+        [Test]
+
+        public void DisableOnDeath_HasHP_ObjectRemainsActive()
+        {
+            GameObject testObject = new GameObject();
+            Cube cubeScript = testObject.AddComponent<Cube>();
+
+            cubeScript.health = 20;
+            cubeScript.DisableOnDeath();
+
+            Assert.IsTrue(testObject.activeSelf);
+        }
     }
 }
