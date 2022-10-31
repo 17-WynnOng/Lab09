@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    public int health;
+    public float health;
     // Update is called once per frame
     void Update()
     {
