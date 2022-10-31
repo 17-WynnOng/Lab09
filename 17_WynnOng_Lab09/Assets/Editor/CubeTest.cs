@@ -26,13 +26,19 @@ namespace Tests
 
         public void DisableOnDeath_HasHP_ObjectRemainsActive()
         {
+            GameObject testObject = MakeFakeCube(20);
+
+            Assert.IsTrue(testObject.activeSelf);
+        }
+
+        private static GameObject MakeFakeCube(int hp)
+        {
             GameObject testObject = new GameObject();
             Cube cubeScript = testObject.AddComponent<Cube>();
 
-            cubeScript.health = 20;
+            cubeScript.health = hp;
             cubeScript.DisableOnDeath();
-
-            Assert.IsTrue(testObject.activeSelf);
+            return testObject;
         }
     }
 }
